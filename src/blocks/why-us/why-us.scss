@@ -1,0 +1,39 @@
+// В этом файле должны быть стили для БЭМ-блока why-us, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.why-us {
+
+  $block-name:                &; // #{$block-name}__element
+
+  margin-bottom: 125px;
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-bottom: 100px;
+
+    text-align: center;
+
+    .heading__title {
+      margin-top: 0;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    grid-gap: 30px 5%;
+    justify-content: center;
+    padding-left: 0;
+    list-style-type: none;
+    margin-bottom: 95px;
+  }
+
+  &__button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -1,0 +1,87 @@
+extends ../pug/layout.pug
+
+block meta
+  title Index page
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block header
+  +page-header()
+    .page-header__logo-wrapper
+      p.page-header__logo #[strong Crios]
+      p.page-header__text free psd template
+
+
+block content
+  +hero()
+
+  +why-us()
+    header.why-us__heading.heading
+      p.heading__text Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+      h2.heading__title Lorem ipsum dolor sit amet
+
+    ul.why-us__list
+
+      - for (var x = 1; x <= 4; x++)
+        li.why-us__item.card.card--why-us(style="background-image: url(img/"+x+".png)")
+          b.card__title Lorem ipsum dolor sit amet
+          p.card__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, neque.
+
+    button.why-us__button.button
+     span Check our offer
+
+  +tile()
+    ul.tile__list
+      li.tile__item.tile__item--img
+        img.tile__img(src="img/tile-1.jpg" alt="lorem ipsum")
+      li.tile__item
+        p.tile__text.tile__text--title
+          b Lorem ipsum dolor
+        p.tile__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi delectus maxime labore alias! Quo aut atque neque! Necessitatibus, doloribus. Facere tempora placeat officia ducimus illo sunt voluptate minus architecto sed.
+      li.tile__item
+        p.tile__text.tile__text--title
+          b Lorem ipsum dolor
+        p.tile__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi delectus maxime labore alias! Quo aut atque neque! Necessitatibus, doloribus. Facere tempora placeat officia ducimus illo sunt voluptate minus architecto sed.
+      li.tile__item.tile__item--img
+        img.tile__img(src="img/tile-2.jpg" alt="lorem ipsum")
+
+  +example()
+    ul.example__list
+     li.example__item.example__item--img
+      img.example__img(src="img/App_Screen.png", alt="lorem ipsum")
+     li.example__item
+        p.example__text.example__text--title
+          b Lorem ipsum dolor
+        p.example__text Lorem ip    sum, dolor sit amet consectetur adipisicing elit. Nisi delectus maxime labore alias! Quo aut atque neque! Necessitatibus, doloribus. Facere tempora placeat officia ducimus illo sunt voluptate minus architecto sed.
+     li.example__item
+        p.example__text.example__text--title
+          b Lorem ipsum dolor
+        p.example__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi delectus maxime labore alias! Quo aut atque neque! Necessitatibus, doloribus. Facere tempora placeat officia ducimus illo sunt voluptate minus architecto sed.
+     li.example__item.example__item--img
+      img.example__img(src="img/App_Screen-2.png", alt="lorem ipsum")
+
+  +quote()
+    .quote__wrapper
+      .quote__item.quote__item--img
+        img.quote__img(src="img/John_Doe-2.png", alt="John Doe, CEO at Crios.com")
+      blockquote.quote__item.blockquote
+        p.blockquote__title
+          b Lorem, ipsum dolor
+        p.blockquote__text Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati similique vero porro veritatis doloribus ipsam perspiciatis consequatur, quidem cupiditate quod in placeat nisi saepe eos blanditiis! Labore tempore nihil repudiandae.
+        p.blockquote__text.blockquote__text--author
+          strong.blockquote__author John Doe
+          span.blockquote__position CEO at Crios.com
+
+block footer
+  +page-footer()
+    header.page-footer__heading.heading
+      p.heading__text Lorem ipsum, dolor sit amet consectetur adipisicing.
+      h2.heading__title Lorem ipsum dolor sit amet
+      button.heading__button.button
+        span push button
+
+
+//- block page-bottom
+//-   script(src='js/some.js')

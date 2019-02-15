@@ -1,0 +1,73 @@
+// В этом файле должны быть стили для БЭМ-блока example, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.example {
+
+  $block-name:                &; // #{$block-name}__element
+
+  padding-top: 100px;
+  padding-bottom: 200px;
+
+  overflow: hidden;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-gap: 100px;
+    align-items: center;
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  &__item {
+    max-width: 500px;
+
+    &:nth-child(odd) {
+      justify-self: end;
+    }
+
+    &--img {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+
+        display: block;
+
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      &:first-child {
+
+        &::before {
+          top: 0;
+          left: 0;
+
+          width: 674px;
+          height: 674px;
+
+          background-image: url('/img/Snowflake.png');
+          transform: translate(-300px, -200px);
+        }
+      }
+
+      &:last-child {
+
+        &::before {
+          right: 0;
+          bottom: 0;
+
+          width: 788px;
+          height: 788px;
+
+          background-image: url('/img/Snowflake-2.png');
+          transform: translate(500px, 350px);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (why-us)
+
+mixin why-us(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +why-us('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' why-us--' + modsList[i].trim();
+      }
+    }
+
+  section.why-us(class=allMods)&attributes(attributes)
+    .why-us__inner.inner
+      block

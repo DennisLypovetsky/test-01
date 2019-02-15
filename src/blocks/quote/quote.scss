@@ -1,0 +1,38 @@
+// В этом файле должны быть стили для БЭМ-блока quote, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.quote {
+
+  $block-name:                &; // #{$block-name}__element
+  margin: 0;
+
+  background-color: $gray-light;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, auto));
+    grid-gap: 50px;
+    align-items: center;
+  }
+
+  &__item {
+
+    &--img {
+      width: 100%;
+      min-height: 627px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      background-image: url("/img/Snowflake-3.png");
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: contain;
+    }
+  }
+
+  &__img {
+    object-fit: contain;
+  }
+}

@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (example)
+
+mixin example(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +example('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' example--' + modsList[i].trim();
+      }
+    }
+
+  .example(class=allMods)&attributes(attributes)
+    .example__inner.inner
+      block
